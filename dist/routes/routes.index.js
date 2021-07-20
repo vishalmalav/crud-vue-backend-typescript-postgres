@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const router = express_1.Router();
+const index_controller_1 = require("../controllers/index.controller");
+router.post("/tutorials", index_controller_1.createTutorials);
+router.get("/tutorials", index_controller_1.getTutorials);
+router.get("/tutorials/findAll", index_controller_1.findAll);
+router.get("/published", index_controller_1.findAllPublished);
+router.get("/tutorials/:id", index_controller_1.getTutorialById);
+router.put("/tutorials/:id", index_controller_1.updateTutorials);
+router.delete("/tutorials/:id", index_controller_1.deleteTutorials);
+router.delete("/tutorials/deleteAll", index_controller_1.deleteAll);
+exports.default = router;
